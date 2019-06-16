@@ -10,7 +10,7 @@ import css from "./footer.css";
 import buttonStyles from "./button.css";
 
 const getFooter = () => import(/* webpackChunkName: "footer" */ "./footer");
-const getGsap = () => import("gsap");
+const getGsap = () => import(/* webpackChunkName: "gsap" */ "gsap");
 const getStyle = color => import(`./button-styles/${color}`);
 
 const image = makeImage(imageUrl);
