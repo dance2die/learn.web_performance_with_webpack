@@ -11,6 +11,7 @@ import buttonStyles from "./button.css";
 
 const getFooter = () => import("./footer");
 const getGsap = () => import("gsap");
+const getStyle = color => import(`./button-styles/${color}`);
 
 const image = makeImage(imageUrl);
 const button = makeButton("Yay! A Button!");
@@ -22,6 +23,11 @@ button.addEventListener("click", () => {
 
   getGsap().then(gsap => {
     console.log(gsap);
+  });
+
+  getStyle("blue").then(style => {
+    console.log(`style`, style);
+    button.style = style.default;
   });
 });
 
